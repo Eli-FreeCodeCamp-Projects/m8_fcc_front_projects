@@ -31,10 +31,7 @@ export const router = createHashRouter([
                 ]
             }
         ]
-    },
-    {
-        path: '/',
     }
 ], {
-    basename: "/m8_fcc_front_projects",
+    //basename: "/m8_fcc_front_projects",
 })
