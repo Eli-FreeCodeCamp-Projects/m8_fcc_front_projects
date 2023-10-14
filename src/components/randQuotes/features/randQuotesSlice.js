@@ -43,7 +43,7 @@ const randQuotesSlice = createSlice({
     name: 'randQuotes',
     initialState: loadInitialState,
     reducers: {
-        refreshQuote(state, action){
+        refreshQuote(state){
             if(ut.isArray(state.quotes) && state.quotes.length > 0){
                 state.quote = state.quotes[getRandomQuoteId(state.quotes.length)];
             }else{
