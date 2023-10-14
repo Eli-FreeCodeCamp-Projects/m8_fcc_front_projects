@@ -1,0 +1,63 @@
+@import "../root";
+@import "../mixins";
+$pads-width: 50px;
+$pads-height: 50px;
+$pads-margin: 2px;
+
+#js-calc{
+  height: 100%;
+  width: 100%;
+  .js-calc-main{
+    height: 400px;
+    width: 300px;
+    background-color: #5a88b7;
+    border-radius: 10px;
+    padding: 10px;
+    .js-calc-head{
+      text-align: right;
+      padding: 0 5px 10px 0;
+      color: black;
+    }
+    .display-box{
+      @include  flex(row, end, center);
+      width: 100%;
+      height: 60px;
+      background-color: black;
+      border-radius: 10px;
+      padding: 10px 15px;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    .js-calc-pads{
+      .js-calc-row{
+        /*width: $pads-width*5+$pads-margin*10;
+        margin: 0 auto;*/
+        button{
+          height: $pads-height;
+          width: $pads-width;
+          margin: $pads-margin;
+          font-size: 1.6em;
+          &#clear,
+          &#zero{
+            width: $pads-width*2+$pads-margin*2;
+          }
+          &.btn-number{
+            background-color: #3c4650;
+          }
+          i{
+            font-size: 0.9em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 450px){
+  #js-calc{
+    .js-calc-main{
+      width: 300px;
+      margin: 0 auto;
+    }
+  }
+}
