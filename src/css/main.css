@@ -39,6 +39,7 @@ button i {
 .app-main .app-content {
   max-width: 1280px;
   margin: 0 auto;
+  width: 100%;
 }
 .app-main header.app-header {
   position: fixed;
@@ -87,6 +88,10 @@ button i {
   width: fit-content;
   max-width: 100%;
   margin: auto;
+}
+
+.fcc_test_ui #fcc_toggle {
+  top: 50px;
 }
 
 /*# sourceMappingURL=main.css.map */

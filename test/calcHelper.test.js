@@ -79,7 +79,7 @@ test('test setNewOutput method', () => {
 
 test('test getMatchedValues method', () => {
     expect(ch.getMatchedValues(
-        /^(?<operator>[/x+-])(-?(?:[0-9]+(?:\.?[0-9]+)?))/,
+        /^(?<operator>[/x+-])(-?[0-9]+(?:\.?[0-9]+)?)/,
         '-3',
         2)).toStrictEqual({
         text: '',
@@ -95,7 +95,7 @@ test('test getMatchedValues method', () => {
     })
     //-> bad group number
     expect(ch.getMatchedValues(
-        /^(?<operator>[/x+-])(-?(?:[0-9]+(?:\.?[0-9]+)?))/,
+        /^(?<operator>[/x+-])(-?[0-9]+(?:\.?[0-9]+)?)/,
         '-3',
         1)).toBe(null)
 });

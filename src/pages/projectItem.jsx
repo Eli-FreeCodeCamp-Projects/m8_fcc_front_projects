@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-
+import PropTypes from "prop-types";
 /**
  * View project Item from router
  * @return {JSX.Element}
@@ -24,4 +24,12 @@ export function ProjectItem({header, imageLink, imageAlt, description, projectLi
             </div>
         </div>
     )
+}
+
+ProjectItem.propTypes = {
+    header: PropTypes.string.isRequired,
+    imageLink: PropTypes.string.isRequired,
+    imageAlt: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    projectLink: PropTypes.string.isRequired
 }

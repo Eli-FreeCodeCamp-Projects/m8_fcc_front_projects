@@ -161,7 +161,7 @@ export class CalcHelper{
      */
     static parseCalc(output){
         let res = [],
-            tmp = null,
+            tmp,
             text = output,
             i = 0;
         const MAX_LOOP = 100
