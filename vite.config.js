@@ -11,5 +11,6 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     setupFiles: './test/setup.js'
-  }
+  },
+  base: '/m8_fcc_front_projects/'
 })
