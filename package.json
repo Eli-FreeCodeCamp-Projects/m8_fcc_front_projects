@@ -1,15 +1,15 @@
 {
-  "name": "m8_fcc_projects",
+  "name": "m8_fcc_front_projects",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://mano8.github.io/m8_fcc_front_projects/",
+  "homepage": "https://mano8.github.io/m8_fcc_front_projects",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "test": "vitest",
-    "build": "vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d docs",
+    "build": "vite build --base=./",
+    "predeploy": "vite build",
+    "deploy": "gh-pages -b master -d dist",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

@@ -35,4 +35,6 @@ export const router = createBrowserRouter([
     {
         path: '/',
     }
-])
+], {
+    basename: "/m8_fcc_front_projects",
+})
