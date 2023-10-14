@@ -28,7 +28,7 @@ export function ProjectItem({header, imageLink, imageAlt, description, projectLi
 
 ProjectItem.propTypes = {
     header: PropTypes.string.isRequired,
-    imageLink: PropTypes.string.isRequired,
+    imageLink: PropTypes.string,
     imageAlt: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     projectLink: PropTypes.string.isRequired

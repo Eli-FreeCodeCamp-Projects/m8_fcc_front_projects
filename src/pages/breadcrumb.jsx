@@ -16,7 +16,6 @@ export function Breadcrumb(){
                 nbItems = items.length;
             let linkSlug = ''
             return items.map((slug, key) => {
-                console.log(`slug ${slug}`)
                 if(!ut.isStrNotEmpty(slug) && nbItems > 0){
                     linkSlug += '/'
                     return (<li
