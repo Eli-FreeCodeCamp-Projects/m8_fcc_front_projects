@@ -1,11 +1,11 @@
-import {createBrowserRouter, Outlet} from 'react-router-dom'
+import {createHashRouter, Outlet} from 'react-router-dom'
 import {Home} from "./pages/home.jsx";
 import {SingleFront} from "./pages/singleFront.jsx";
 import {PageError} from "./pages/pageError.jsx";
 import {Root} from "./pages/root.jsx";
 import {FrontProjects} from "./pages/frontProjects.jsx";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
     {
         path: '/',
         element: <Root />,
