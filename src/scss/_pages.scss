@@ -1,0 +1,79 @@
+@import 'variables';
+.app-main{
+  width: 100%;
+  height: 100%;
+  a{
+    color: $link-light;
+    text-decoration: none;
+    &:hover{
+      color: $link-hover;
+    }
+    &:active{
+      color: $link-active;
+    }
+  }
+  h1, h2, h3, h4, h5 ,h6{
+    font-family: $pri-font;
+  }
+  header nav,
+  .app-breadcrumb,
+  .app-content{
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  header.app-header{
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    border-radius: 0;
+    z-index: 99;
+  }
+
+  .app-breadcrumb{
+    padding: 60px 20px 0 20px;
+  }
+  .app-content{
+
+  }
+  /* Welcome Section */
+  #welcome-section{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    color: var(--color-pri1);
+  }
+}
+.projects{
+  padding: 0;
+  header{
+    background-color: transparent;
+    color: $text-light;
+    border: none;
+    h1{
+      padding: 10px 5px 20px 5px;
+    }
+  }
+
+  h2{
+    font-size: 1.2em;
+  }
+  .project-img-link{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .project-img{
+      display: inline-block;
+      max-height: 230px;
+      width: fit-content;
+      max-width: 100%;
+      margin: auto;
+    }
+  }
+
+}

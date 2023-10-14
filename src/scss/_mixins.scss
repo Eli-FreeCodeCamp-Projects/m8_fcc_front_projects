@@ -1,0 +1,12 @@
+@mixin box-shadow($x, $y, $blur, $c){
+  -webkit-box-shadow: $x $y $blur $c;
+  -moz-box-shadow: $x $y $blur $c;
+  box-shadow: $x $y $blur $c;
+}
+
+@mixin flex($dir, $j, $a){
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $j;
+  align-items: $a;
+}

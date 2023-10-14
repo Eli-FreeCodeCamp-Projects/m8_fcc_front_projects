@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  background-color: rgb(20, 30, 40);
+  color: linen;
+}
+
+/** Avoid target i element on events handlers. */
+button i {
+  pointer-events: none;
+}
+
+.app-main {
+  width: 100%;
+  height: 100%;
+  /* Welcome Section */
+}
+.app-main a {
+  color: #99acea;
+  text-decoration: none;
+}
+.app-main a:hover {
+  color: #c399ea;
+}
+.app-main a:active {
+  color: #eab199;
+}
+.app-main h1, .app-main h2, .app-main h3, .app-main h4, .app-main h5, .app-main h6 {
+  font-family: "Corben", serif;
+}
+.app-main header nav,
+.app-main .app-breadcrumb,
+.app-main .app-content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.app-main header.app-header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  border-radius: 0;
+  z-index: 99;
+}
+.app-main .app-breadcrumb {
+  padding: 60px 20px 0 20px;
+}
+.app-main #welcome-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  color: var(--color-pri1);
+}
+
+.projects {
+  padding: 0;
+}
+.projects header {
+  background-color: transparent;
+  color: linen;
+  border: none;
+}
+.projects header h1 {
+  padding: 10px 5px 20px 5px;
+}
+.projects h2 {
+  font-size: 1.2em;
+}
+.projects .project-img-link {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.projects .project-img-link .project-img {
+  display: inline-block;
+  max-height: 230px;
+  width: fit-content;
+  max-width: 100%;
+  margin: auto;
+}
+
+/*# sourceMappingURL=main.css.map */
