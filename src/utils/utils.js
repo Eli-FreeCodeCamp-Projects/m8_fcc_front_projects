@@ -39,6 +39,25 @@ export const ut = {
     isAttrKey: (value) => {
         return ut.isStr(value) && /(?=[a-zA-Z0-9\-_]{1,80}$)^([a-zA-Z0-9]+(?:[_-][a-zA-Z0-9]+)*)$/.test(value)
     },
+    /**
+     * Test is regex is valid
+     * @param regex {RegExp|string} The regex to test
+     * @return {boolean} Return true if regex is valid or false else where.
+     */
+    isValidRegex: (regex) => {
+        try{
+            new RegExp(regex);
+            return true
+        }catch (e){
+            return false
+        }
+
+    },
+    /**
+     * Check a query selector
+     * @param s {string} The query selector to check
+     * @return {*}
+     */
     queryCheck: (s) => {
         return document.createDocumentFragment().querySelector(s)
     },
