@@ -1,11 +1,10 @@
 import {parse_markdown} from '../../utils/markedParser.js'
-
+import { useSelector } from 'react-redux'
+import {selectInputText} from './features/mdPreviewerSlice.js';
+import PropTypes from "prop-types";
 /**
  * Output Component
  */
-import { useSelector } from 'react-redux'
-import {selectInputText} from './features/mdPreviewerSlice.js';
-
 export function HtmlPreview({defaultInput}){
     const input_text = useSelector(selectInputText)
 
@@ -20,4 +19,8 @@ export function HtmlPreview({defaultInput}){
             dangerouslySetInnerHTML={{ __html: parseMarkdown(input_text??defaultInput) }}
         />
     )
+}
+
+HtmlPreview.propTypes = {
+    defaultInput: PropTypes.string
 }

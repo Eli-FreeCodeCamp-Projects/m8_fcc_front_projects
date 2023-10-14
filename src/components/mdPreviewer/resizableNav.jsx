@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export function ResizableNav({handleExpandWindow, handleComboView}){
 
     return (
@@ -44,4 +46,9 @@ export function ResizableNav({handleExpandWindow, handleComboView}){
             </div>
         </nav>
     )
+}
+
+ResizableNav.propTypes = {
+    handleExpandWindow: PropTypes.func.isRequired,
+    handleComboView: PropTypes.func.isRequired
 }

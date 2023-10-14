@@ -1,4 +1,5 @@
 import {ResizableWindows} from "./resizableWindows.jsx";
+import PropTypes from "prop-types";
 
 export function ResizableContainer({leftPane, rightPane}){
 
@@ -11,4 +12,8 @@ export function ResizableContainer({leftPane, rightPane}){
             />
         </section>
     )
+}
+ResizableContainer.propTypes = {
+    leftPane: PropTypes.element.isRequired,
+    rightPane: PropTypes.element.isRequired
 }

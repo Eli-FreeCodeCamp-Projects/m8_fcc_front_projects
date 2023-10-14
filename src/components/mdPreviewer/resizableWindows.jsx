@@ -4,8 +4,9 @@
 import { useEffect } from 'react'
 import {ResizableHelper} from "../../../../Front End/fcc_MarkdownPreviewer/src/utils/resizableHelper.js";
 import {ResizableNav} from "./resizableNav.jsx";
+import PropTypes from "prop-types";
 
-export function ResizableWindows(props){
+export function ResizableWindows({leftPane, rightPane}){
     /**
      * Instantiate PreviewerHelper class.
      * Used to collapse and resize Previewer Component windows
@@ -121,7 +122,7 @@ export function ResizableWindows(props){
                             </button>
                         </div>
                         <div id="m8_left_body" className="card-body">
-                            {props.leftPane}
+                            {leftPane}
                         </div>
                     </div>
                 </div>
@@ -152,7 +153,7 @@ export function ResizableWindows(props){
                             </button>
                         </div>
                         <div id="m8_right_body" className="card-body">
-                            {props.rightPane}
+                            {rightPane}
                         </div>
                     </div>
                 </div>
@@ -161,4 +162,9 @@ export function ResizableWindows(props){
 
     )
 
+}
+
+ResizableWindows.propTypes = {
+    leftPane: PropTypes.element.isRequired,
+    rightPane: PropTypes.element.isRequired
 }
