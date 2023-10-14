@@ -1,0 +1,23 @@
+@import '../variables';
+
+#preview{
+  h1, h2, h3, h4, h5{
+    font-family: $pri-font;
+  }
+  p > code{
+    padding: 5px 10px;
+    background-color: $bg-code;
+    border-radius: 10px;
+    color: $text-light
+  }
+  pre > code{
+    display: inline-block;
+    padding: 15px;
+    width: 100%;
+    background-color: $bg-code;
+    border-radius: 10px;
+  }
+  img{
+    max-width: 90%;
+  }
+}

@@ -1,0 +1,15 @@
+@import '../variables';
+
+header{
+  padding: 0;
+  background-color: $text-light;
+  color: $bg-main;
+  border-radius: 0 0 10px 10px;
+  border-bottom: 5px solid $bg-code;
+  h1{
+    padding: 8px 15px;
+    margin: 0;
+    font-family: $pri-font;
+    font-size: 1.6em;
+  }
+}

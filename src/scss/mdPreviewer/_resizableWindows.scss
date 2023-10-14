@@ -1,0 +1,102 @@
+@import '../variables';
+
+/* Nav bar */
+#m8-nav-resizable{
+  .combo-expand{
+    display: none;
+  }
+}
+
+#m8-resizable-content{
+
+  .card-header h2{
+    font-size: 1.1em;
+    margin: 0;
+  }
+
+  .left-container{
+    width: 100%;
+    height: 50vh;
+    h2{
+
+    }
+    .card, .form-floating, .container-fluid{
+      height: 100%;
+      width: 100%;
+    }
+
+  }
+
+  .size-container{
+    display: none;
+
+    .ghost-drag{
+      display: none;
+    }
+  }
+  .right-container{
+    width: 100%;
+  }
+}
+
+
+
+@media only screen and (min-width: 768px){
+  #m8-nav-resizable{
+    .combo-expand{
+      display: inherit;
+    }
+  }
+
+  #m8-resizable-content{
+
+    .left-container{
+      width: 50%;
+      padding: 0 0 10px 0;
+      height: unset;
+    }
+
+    .size-container{
+      display: flex;
+      flex-direction: column;
+      //justify-content: center;
+      align-items: center;
+      width: 10px;
+      margin: 10px 0;
+      border: 1px solid black;
+      background: linear-gradient(90deg, linen, black, linen);
+      cursor: move;
+      button{
+        position: relative;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        font-size: 0.9em;
+        z-index: 1;
+        background-color: $bg-main;
+        padding: 0;
+        pointer-events: none;
+        border: none;
+        i{
+          display: block;
+          color: linen;
+          pointer-events: none; // add this line
+        }
+      }
+      .ghost-drag{
+        visibility: hidden;
+      }
+    }
+    .right-container{
+      width: 50%;
+      padding: 0 0 10px 0;
+      .card-body{
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    }
+  }
+
+
+
+}
