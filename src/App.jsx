@@ -4,7 +4,7 @@ import './css/main.css'
 
 function App() {
   return (
-      <RouterProvider router={router} />
+      <RouterProvider router={router}  basename="/m8_fcc_front_projects/" />
   )
 }
 
