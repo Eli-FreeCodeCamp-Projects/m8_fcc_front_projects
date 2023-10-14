@@ -28,6 +28,9 @@ export function SingleFront(){
             case 'js-calculator':
                 const JsCalcLazy = lazy(() => import("../components/jsCalc/App.jsx"))
                 return <Suspense><JsCalcLazy /></Suspense>
+            case '25-5-clock':
+                const Clock25_5Lazy = lazy(() => import("../components/25_5Clock/App.jsx"))
+                return <Suspense><Clock25_5Lazy /></Suspense>
         }
     }
 
