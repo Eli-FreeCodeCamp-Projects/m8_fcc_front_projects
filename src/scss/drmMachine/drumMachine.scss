@@ -1,0 +1,68 @@
+@import '../variables';
+@import '../root';
+#drum-container{
+  padding: 0;
+}
+
+#drum-machine{
+  width: 600px;
+  min-width: 260px;
+  min-height: 300px;
+  background-color: $bg-dm;
+  margin: auto;
+  border-radius: 10px;
+  border: 2px solid white;
+  font-family: 'Russo One', sans-serif;
+  #drum-header{
+    font-family: 'Russo One', sans-serif;
+    padding: 20px 15px 0 15px;
+
+    h1{
+      width: fit-content;
+      font-size: 1.2em;
+      font-weight: 600;
+      color: rgb(250, 150, 150);
+      letter-spacing: 0.1em;
+      border-bottom: 3px solid rgb(250, 150, 150);
+    }
+
+  }
+  #drum-pads{
+    padding: 20px 10px;
+    .drum-pad{
+      text-align: center;
+      height: 45px;
+      border: 1px solid white;
+      border-radius: 10px;
+      margin: 10px 0;
+      background-color: $bg-dm;
+      /*transition: border-color 0.25s;*/
+      will-change: filter;
+      transition: filter 300ms;
+      cursor: pointer;
+    }
+    .drum-pad:hover:not(.disabled){
+      filter: drop-shadow(0 0 0.8em $text-light);
+    }
+    .drum-pad.play{
+      filter: drop-shadow(0 0 1.2em white);
+    }
+    .drum-pad.disabled{
+      background-color: $bg-pad-disabled;
+      color:$text-pad-disabled;
+    }
+  }
+  #drum-controls{
+    padding: 20px;
+    .display-box{
+      height: 45px;
+      background-color: $bg-main;
+      padding: 10px;
+      margin: 15px 0;
+      color: $text-light;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  }
+
+}
