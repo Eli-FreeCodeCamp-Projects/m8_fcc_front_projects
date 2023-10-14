@@ -36,7 +36,8 @@ $pads-margin: 2px;
           height: $pads-height;
           width: $pads-width;
           margin: $pads-margin;
-          font-size: 1.6em;
+          font-size: 1.4em;
+          padding: 5px;
           &#clear,
           &#zero{
             width: $pads-width*2+$pads-margin*2;

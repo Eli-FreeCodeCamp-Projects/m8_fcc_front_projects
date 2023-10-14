@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
+import imageDefault from '../../public/img/image-regular.svg'
 /**
  * View project Item from router
  * @return {JSX.Element}
@@ -14,7 +15,7 @@ export function ProjectItem({header, imageLink, imageAlt, description, projectLi
                 </div>
                 <Link to={projectLink} className="project-img-link">
                     <img
-                        src={(imageLink) ? imageLink : '/img/image-regular.svg'}
+                        src={(imageLink) ? imageLink : imageDefault}
                         className="card-img-top project-img"
                         alt={imageAlt} />
                 </Link>

@@ -53,7 +53,8 @@ button i {
   height: 50px;
   width: 50px;
   margin: 2px;
-  font-size: 1.6em;
+  font-size: 1.4em;
+  padding: 5px;
 }
 #js-calc .js-calc-main .js-calc-pads .js-calc-row button#clear, #js-calc .js-calc-main .js-calc-pads .js-calc-row button#zero {
   width: 104px;
