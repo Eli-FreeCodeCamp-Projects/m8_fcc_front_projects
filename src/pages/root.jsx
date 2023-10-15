@@ -16,7 +16,7 @@ export function Root(){
                 <RootNavBar />
             </header>
             <Breadcrumb />
-            <div className='container-fluid p-2 app-content'><Outlet /></div>
+            <div className='container-fluid app-content'><Outlet /></div>
         </div>
 
     )
