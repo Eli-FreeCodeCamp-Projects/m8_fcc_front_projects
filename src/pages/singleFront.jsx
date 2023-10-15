@@ -44,7 +44,7 @@ export function SingleFront(){
                 {loadComponent(project?.slug)}
             </div>
             <div className="container-fluid project-view-desc">
-
+                {project?.info}
             </div>
         </div>
     )
