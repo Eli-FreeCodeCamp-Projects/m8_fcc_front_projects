@@ -1,0 +1,1 @@
+import{P as s,j as t}from"./index-73182748.js";function p({displayMsg:i,itemId:e,itemClass:r}){return t.jsx("div",{id:e,className:r,children:i})}p.propTypes={displayMsg:s.string.isRequired,itemId:s.string.isRequired,itemClass:s.string.isRequired};export{p as D};
