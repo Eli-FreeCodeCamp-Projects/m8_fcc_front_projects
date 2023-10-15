@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
-import imageDefault from '../../public/img/image-regular.svg'
+import imageDefault from '../img/image-regular.svg'
 /**
  * View project Item from router
  * @return {JSX.Element}

@@ -1,3 +1,7 @@
+import RandomQuoteMachineImg from '../img/RandomQuoteMachine.png'
+import MarkdownPreviewerImg from '../img/MarkdownPreviewer.png'
+import DrumMachineImg from '../img/DrumMachine.png'
+import JsCalculatorImg from '../img/JavaSciptCalculator.png'
 /**
  *
  */
@@ -8,7 +12,7 @@ export const projects = [
         showTitle: true,
         parent: 'front-end-projects',
         link: '/front-end-projects/random-quote-machine',
-        img: '/img/RandomQuoteMachine.png',
+        img: RandomQuoteMachineImg,
         imgAlt: 'Random Quote Machine React App',
         description: '(React, Sass and Javascript)'
     },
@@ -18,7 +22,7 @@ export const projects = [
         showTitle: false,
         parent: 'front-end-projects',
         link: '/front-end-projects/markdown-previewer',
-        img: '/img/MarkdownPreviewer.png',
+        img: MarkdownPreviewerImg,
         imgAlt: 'MarkDown Previewer React App',
         description: '(React, Sass, Bootstrap and Javascript)'
     },
@@ -28,7 +32,7 @@ export const projects = [
         showTitle: true,
         parent: 'front-end-projects',
         link: '/front-end-projects/drum-machine',
-        img: '/img/DrumMachine.png',
+        img: DrumMachineImg,
         imgAlt: 'Drum Machine React App',
         description: '(React, Sass, Bootstrap and Javascript)'
     },
@@ -38,7 +42,7 @@ export const projects = [
         showTitle: true,
         parent: 'front-end-projects',
         link: '/front-end-projects/js-calculator',
-        img: null,
+        img: JsCalculatorImg,
         imgAlt: 'JavaScript Calculator React App',
         description: '(React, Sass, Bootstrap and Javascript)'
     },
