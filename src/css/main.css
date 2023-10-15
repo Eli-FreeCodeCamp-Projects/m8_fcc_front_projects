@@ -27,6 +27,22 @@ button i {
   width: -moz-max-content;
 }
 
+.code-inline-dark, .app-main .app-content .project-view .project-view-desc p > code,
+.app-main .app-content .project-view .project-view-desc li > code {
+  padding: 2px 10px;
+  background-color: rgb(60, 70, 80);
+  border-radius: 10px;
+  color: linen;
+}
+
+.code-multiline-dark {
+  display: inline-block;
+  padding: 15px;
+  width: 100%;
+  background-color: rgb(60, 70, 80);
+  border-radius: 10px;
+}
+
 .app-main {
   width: 100%;
   height: 100%;
@@ -64,9 +80,29 @@ button i {
 }
 .app-main .app-content {
   padding: 0;
+  overflow: hidden;
 }
 .app-main .app-content .project-view h1 {
   padding: 5px 10px;
+}
+.app-main .app-content .project-view .project-view-app {
+  margin: 10px 0;
+}
+.app-main .app-content .project-view .project-view-app section {
+  border-radius: 10px;
+}
+.app-main .app-content .project-view .project-view-desc {
+  margin: 20px 0;
+  background-color: rgba(29, 48, 68, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+  max-width: 100%;
+}
+.app-main .app-content .project-view .project-view-desc .desc-item h2 {
+  padding: 0 0 10px 0;
+  border-bottom: 2px solid linen;
+  margin-bottom: 20px;
 }
 .app-main #welcome-section {
   display: flex;
