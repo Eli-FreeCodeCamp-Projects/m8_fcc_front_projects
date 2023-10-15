@@ -5,17 +5,10 @@
     font-family: $pri-font;
   }
   p > code{
-    padding: 5px 10px;
-    background-color: $bg-code;
-    border-radius: 10px;
-    color: $text-light
+    @extend .code-inline-dark;
   }
   pre > code{
-    display: inline-block;
-    padding: 15px;
-    width: 100%;
-    background-color: $bg-code;
-    border-radius: 10px;
+    @extend .code-multiline-dark;
   }
   img{
     max-width: 90%;

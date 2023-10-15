@@ -1,3 +1,5 @@
+@import "variables";
+
 .flex-column-center{
   display: flex;
   flex-direction: column;
@@ -7,4 +9,19 @@
 .width-fit-content{
   max-width: fit-content;
   width: -moz-max-content;
+}
+
+.code-inline-dark{
+  padding: 2px 10px;
+  background-color: $bg-code;
+  border-radius: 10px;
+  color: $text-light;
+}
+
+.code-multiline-dark{
+  display: inline-block;
+  padding: 15px;
+  width: 100%;
+  background-color: $bg-code;
+  border-radius: 10px;
 }
