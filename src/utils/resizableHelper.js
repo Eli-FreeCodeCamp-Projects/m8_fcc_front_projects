@@ -275,6 +275,7 @@ export class ResizableHelper extends ResizableBase{
     }
 
     loadView(){
+        this.window.setTypeWindow();
         switch(this.nav.status){
             case Display.LEFT_PANE:
                 this.expandLeftPane();
