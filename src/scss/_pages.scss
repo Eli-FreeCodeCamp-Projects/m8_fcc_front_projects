@@ -71,7 +71,7 @@
     .project-img{
       display: inline-block;
       max-height: 230px;
-      width: fit-content;
+      @extend .width-fit-content;
       max-width: 100%;
       margin: auto;
     }
