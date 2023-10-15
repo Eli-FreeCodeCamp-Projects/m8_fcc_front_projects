@@ -25,7 +25,7 @@ export default function DrumMachine(){
 
     return(
         <Provider store={Store}>
-            <section id="drum-container" className="container-fluid min-vh-100 vw-100 d-flex ">
+            <section id="drum-container" className="container-fluid d-flex ">
                 <div id="drum-machine" className="container-fluid">
                     <div className="row">
                         <div id="drum-header" className="col-md-12"><h1>M8 Drum Machine</h1></div>
