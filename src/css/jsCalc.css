@@ -26,6 +26,7 @@ button i {
   background-color: #5a88b7;
   border-radius: 10px;
   padding: 10px;
+  margin: 0 auto;
 }
 #js-calc .js-calc-main .js-calc-head {
   text-align: right;
@@ -69,7 +70,6 @@ button i {
 @media only screen and (min-width: 450px) {
   #js-calc .js-calc-main {
     width: 300px;
-    margin: 0 auto;
   }
 }
 
