@@ -38,9 +38,38 @@
   }
   .app-content{
     padding: 0;
+    overflow: hidden;
     .project-view{
       h1{
         padding: 5px 10px;
+      }
+      .project-view-app{
+        margin: 10px 0;
+
+
+        section{
+          border-radius: 10px;
+        }
+      }
+      .project-view-desc{
+        margin: 20px 0;
+        background-color: rgba(29, 48, 68, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        overflow: hidden;
+        max-width: 100%;
+        p > code,
+        li > code{
+          @extend .code-inline-dark;
+        }
+        .desc-item{
+
+          h2{
+            padding: 0 0 10px 0;
+            border-bottom: 2px solid $text-light;
+            margin-bottom: 20px;
+          }
+        }
       }
     }
   }
@@ -88,4 +117,8 @@
 
 .fcc_test_ui #fcc_toggle{
   top: 50px;
+}
+
+@media only screen and (min-width: 450px){
+
 }
