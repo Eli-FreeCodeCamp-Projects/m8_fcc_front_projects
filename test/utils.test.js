@@ -69,6 +69,15 @@ test('test isStrNotEmpty method', () => {
     expect(ut.isStrNotEmpty([2, 3])).toBe(false)
 })
 
+test('test capitalize method', () => {
+    expect(ut.capitalize("1")).toBe("1")
+    expect(ut.capitalize("hello world")).toBe("Hello World")
+    expect(ut.capitalize(`hello`)).toBe(`Hello`)
+    expect(ut.capitalize(``)).toBe(null)
+    expect(ut.capitalize(0, "")).toBe("")
+    expect(ut.capitalize(-10, false)).toBe(false)
+})
+
 test('test isKey method', () => {
     expect(ut.isKey("h1")).toBe(true)
     expect(ut.isKey("Hello_world")).toBe(true)

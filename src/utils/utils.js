@@ -61,6 +61,16 @@ export const ut = {
     isStrNotEmpty: (value) => {
         return (ut.isStr(value) && value !== '')
     },
+    capitalize: (value, defaultValue=null) => {
+        if(ut.isStrNotEmpty(value)){
+            const arr = value.split(" ")
+            const capArr = arr.map(val => {
+                return val.charAt(0).toUpperCase() + val.slice(1)
+            })
+            return capArr.join(" ")
+        }
+        return defaultValue
+    },
     /**
      * Test if value is a valid key and his not empty.
      * A key must :
