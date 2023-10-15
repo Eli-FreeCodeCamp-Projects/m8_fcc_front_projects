@@ -13,6 +13,7 @@ $pads-margin: 2px;
     background-color: #5a88b7;
     border-radius: 10px;
     padding: 10px;
+    margin: 0 auto;
     .js-calc-head{
       text-align: right;
       padding: 0 5px 10px 0;
@@ -58,7 +59,6 @@ $pads-margin: 2px;
   #js-calc{
     .js-calc-main{
       width: 300px;
-      margin: 0 auto;
     }
   }
 }
