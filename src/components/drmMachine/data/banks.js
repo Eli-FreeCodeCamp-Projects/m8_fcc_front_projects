@@ -1,17 +1,27 @@
+import Heater1 from '../assets/sounds/bank1/Heater-1.mp3'
+import Heater2 from '../assets/sounds/bank1/Heater-2.mp3'
+import Heater3 from '../assets/sounds/bank1/Heater-3.mp3'
+import Heater4 from '../assets/sounds/bank1/Heater-4_1.mp3'
+import Clap from '../assets/sounds/bank1/Heater-6.mp3'
+import OpenHH from '../assets/sounds/bank1/Dsc_Oh.mp3'
+import KickNHat from '../assets/sounds/bank1/Kick_n_Hat.mp3'
+import Kick from '../assets/sounds/bank1/RP4_KICK_1.mp3'
+import ClosedHH from '../assets/sounds/bank1/Cev_H2.mp3'
+
 export const banksData = [
     {
         name: "bank1",
         display: "Heater kit",
         drum_pads : [
-            {id:"Heater-1", shortcut: "Q", key_code: 0, display:"Heater 1", sound: "/sounds/bank1/Heater-1.mp3"},
-            {id:"Heater-2", shortcut: "W", key_code: 0, display:"Heater 2", sound: "/sounds/bank1/Heater-2.mp3"},
-            {id:"Heater-3", shortcut: "E", key_code: 0, display:"Heater 3", sound: "/sounds/bank1/Heater-3.mp3"},
-            {id:"Heater-4", shortcut: "A", key_code: 0, display:"Heater 4", sound: "/sounds/bank1/Heater-4_1.mp3"},
-            {id:"Clap", shortcut: "S", key_code: 0, display:"Clap", sound: "/sounds/bank1/Heater-6.mp3"},
-            {id:"Open-HH", shortcut: "D", key_code: 0, display:"Open HH", sound: "/sounds/bank1/Dsc_Oh.mp3"},
-            {id:"Kick-n-Hat", shortcut: "Z", key_code: 0, display:"Kick n'Hat", sound: "/sounds/bank1/Kick_n_Hat.mp3"},
-            {id:"Kick", shortcut: "X", key_code: 0, display:"Kick", sound: "/sounds/bank1/RP4_KICK_1.mp3"},
-            {id:"Closed-HH", shortcut: "C", key_code: 0, display:"Closed HH", sound: "/sounds/bank1/Cev_H2.mp3"}
+            {id:"Heater-1", shortcut: "Q", key_code: 0, display:"Heater 1", sound: Heater1},
+            {id:"Heater-2", shortcut: "W", key_code: 0, display:"Heater 2", sound: Heater2},
+            {id:"Heater-3", shortcut: "E", key_code: 0, display:"Heater 3", sound: Heater3},
+            {id:"Heater-4", shortcut: "A", key_code: 0, display:"Heater 4", sound: Heater4},
+            {id:"Clap", shortcut: "S", key_code: 0, display:"Clap", sound: Clap},
+            {id:"Open-HH", shortcut: "D", key_code: 0, display:"Open HH", sound: OpenHH},
+            {id:"Kick-n-Hat", shortcut: "Z", key_code: 0, display:"Kick n'Hat", sound: KickNHat},
+            {id:"Kick", shortcut: "X", key_code: 0, display:"Kick", sound: Kick},
+            {id:"Closed-HH", shortcut: "C", key_code: 0, display:"Closed HH", sound: ClosedHH}
         ]
     },
     {
