@@ -1,11 +1,10 @@
 
-export default function InfoQuoteMachine(){
+export default function Info25_5Clock(){
 
     return(
         <div className="desc-item">
             <h2><a href="https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-25--5-clock" rel="noreferrer" target="_blank">Project Requirements</a></h2>
             <div>
-
                 <p><strong>Note:</strong> <strong>React 18 has known incompatibilities with the tests for this project (see <a href="https://github.com/freeCodeCamp/freeCodeCamp/issues/45922">issue</a>)</strong></p>
                 <p><strong>Objective:</strong> Build an app that is functionally similar to this: <a href="https://25--5-clock.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://25--5-clock.freecodecamp.rocks</a>.</p>
                 <p>Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.</p>
@@ -40,7 +39,6 @@ export default function InfoQuoteMachine(){
                 <p><strong>User Story #28:</strong> The audio element with id of <code>beep</code> must stop playing and be rewound to the beginning when the element with the id of <code>reset</code> is clicked.</p>
                 <p>You can build your project by <a href="https://codepen.io/pen?template=MJjpwO" target="_blank" rel="noopener noreferrer nofollow">using this CodePen template</a> and clicking <code>Save</code> to create your own pen. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code></p>
                 <p>Once you&apos;re done, submit the URL to your working project with all its tests passing.</p>
-
             </div>
         </div>
     )
