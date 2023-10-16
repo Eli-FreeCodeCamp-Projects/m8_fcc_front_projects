@@ -26,11 +26,12 @@ export function Breadcrumb(){
                     </li>)
                 }else if(ut.isStrNotEmpty(slug) && key > 0){
                     linkSlug += `${slug}/`
+                    const slugText = ut.capitalize(slug.replaceAll('-', ' '))
                     return (<li
                         className="breadcrumb-item text-light"
                         aria-current="page"
                         key={key}>
-                        {(key < nbItems - 1) ? (<Link to={linkSlug}>{slug}</Link>) : slug}
+                        {(key < nbItems - 1) ? (<Link to={linkSlug}>{slugText}</Link>) : slugText}
                     </li>)
                 }
             })
