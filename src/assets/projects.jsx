@@ -2,6 +2,7 @@ import RandomQuoteMachineImg from '../img/RandomQuoteMachine.png'
 import MarkdownPreviewerImg from '../img/MarkdownPreviewer.png'
 import DrumMachineImg from '../img/DrumMachine.png'
 import JsCalculatorImg from '../img/JavaSciptCalculator.png'
+import Clock25_5 from '../img/25_5Clock.png'
 import InfoQuoteMachine from "../components/randQuotes/pageInfo/info.jsx";
 import InfoMdPreviewer from "../components/mdPreviewer/pageInfo/info.jsx";
 import InfoJsCalc from "../components/jsCalc/pageInfo/info.jsx";
@@ -61,7 +62,7 @@ export const projects = [
         showTitle: true,
         parent: 'front-end-projects',
         link: '/front-end-projects/25-5-clock',
-        img: null,
+        img: Clock25_5,
         imgAlt: '25+5 Clock React App',
         description: '(React, Sass, Bootstrap and Javascript)',
         info: <Info25_5Clock />
