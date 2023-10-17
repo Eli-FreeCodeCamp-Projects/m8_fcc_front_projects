@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
  * @return {JSX.Element}
  * @constructor
  */
-export function BtRange({disabled, inputValue, stepValue, minValue, maxValue, inputId, inputName, label, handleChange}){
+export function BtRange({onlyInput= false, disabled, inputValue, stepValue, minValue, maxValue, inputId, inputName, label, handleChange}){
 
     useEffect(() => {
         const element = document.getElementById(inputId)
@@ -19,26 +19,33 @@ export function BtRange({disabled, inputValue, stepValue, minValue, maxValue, in
             element.value = inputValue
         }
     }, []);
-
+    const inputRange = (
+        <input
+            type="range"
+            className="form-range"
+            min={ut.isNumber(minValue) ? minValue: 0}
+            max={ut.isNumber(maxValue) ? maxValue: 100}
+            step={ut.isNumber(stepValue) ? stepValue: 1}
+            id={inputId}
+            name={(ut.isAttrKey(inputName)) ? inputName : inputId}
+            onChange={handleChange}
+            disabled={disabled}
+            value={inputValue}
+        />
+    )
+    if(onlyInput){
+        return inputRange
+    }
     return(
         <div className="vol-box">
             <label htmlFor={inputId} className="form-label">{label}</label>
-            <input
-                type="range"
-                className="form-range"
-                min={ut.isNumber(minValue) ? minValue: 0}
-                max={ut.isNumber(maxValue) ? maxValue: 100}
-                step={ut.isNumber(stepValue) ? stepValue: 1}
-                id={inputId}
-                name={(ut.isAttrKey(inputName)) ? inputName : inputId}
-                onChange={handleChange}
-                disabled={disabled}
-            />
+            {inputRange}
         </div>
     )
 }
 
 BtRange.propTypes = {
+    onlyInput: PropTypes.bool,
     disabled: PropTypes.bool.isRequired,
     inputValue: PropTypes.number.isRequired,
     stepValue: PropTypes.number,
@@ -46,6 +53,6 @@ BtRange.propTypes = {
     maxValue: PropTypes.number,
     inputId: PropTypes.string.isRequired,
     inputName: PropTypes.string,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string,
     handleChange: PropTypes.func.isRequired,
 }
