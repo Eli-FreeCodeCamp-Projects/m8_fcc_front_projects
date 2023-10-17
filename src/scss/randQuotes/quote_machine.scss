@@ -202,7 +202,7 @@
 }
 .box-random{
   background: linear-gradient(40deg, linen 0%, var(--random-color), linen 95%) ;
-  animation: color-transition 2s ease-in-out 0s 1;
+  animation: color-transition 0.5 ease-in-out 0s 1;
 }
 .btn-random{
   background-color: var(--box-dark);
