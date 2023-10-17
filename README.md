@@ -1,8 +1,3 @@
-# React + Vite
+# FreeCodeCamp Certifications projects 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project use Vite, React and React Router to present some projects on GitHub Pages available at https://mano8.github.io/m8_fcc_front_projects/.

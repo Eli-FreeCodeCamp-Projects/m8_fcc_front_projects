@@ -23,7 +23,7 @@ button i {
 }
 
 .width-fit-content, #clock-container .clock-body .timer-control .btn-group, #clock-container .clock-body .timer-display #time-left {
-  max-width: fit-content;
+  max-width: max-content;
   width: -moz-max-content;
 }
 
@@ -80,7 +80,7 @@ button i {
 }
 
 .width-fit-content, #clock-container .clock-body .timer-control .btn-group, #clock-container .clock-body .timer-display #time-left {
-  max-width: fit-content;
+  max-width: max-content;
   width: -moz-max-content;
 }
 

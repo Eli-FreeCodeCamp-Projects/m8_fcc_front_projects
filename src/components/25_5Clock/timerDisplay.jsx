@@ -69,19 +69,24 @@ export default function TimerDisplay(){
         const sec = formatNumberString(val - (min * 60))
         return `${min}:${sec}`
     }
-    let bgClass = 'bg-session-body'
+    let getBgClass = (value) => {
+        switch (value) {
+            case CurrentTimerRun.SESSION.toString():
+                return 'bg-session-body'
+            case CurrentTimerRun.BREAK.toString():
+                return 'bg-break-body'
+        }
+    }
     const getTimerLabel = (value) => {
         switch (value) {
             case CurrentTimerRun.SESSION.toString():
-                bgClass = 'bg-session'
                 return "Session"
             case CurrentTimerRun.BREAK.toString():
-                bgClass = 'bg-break'
                 return "Break"
         }
     }
     return(
-        <div className={`timer-display ${bgClass}`}>
+        <div className={`timer-display ${getBgClass(timerRun)}`}>
             <div id="timer-label" className="timer-label">{getTimerLabel(timerRun)}</div>
             <div id="time-left" className="time-left">{formatTimerValue(timerValue)}</div>
         </div>

@@ -23,7 +23,7 @@ button i {
 }
 
 .width-fit-content, .projects .project-img-link .project-img {
-  max-width: fit-content;
+  max-width: max-content;
   width: -moz-max-content;
 }
 
@@ -152,7 +152,6 @@ button i {
 .projects .project-img-link .project-img {
   display: inline-block;
   max-height: 230px;
-  max-width: 100%;
   margin: auto;
 }
 
