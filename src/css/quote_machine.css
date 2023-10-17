@@ -42,6 +42,20 @@ button i {
   border-radius: 10px;
 }
 
+/* Remove Arrows from input number */
+.input-number-text {
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+.input-number-text input::-webkit-outer-spin-button,
+.input-number-text input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-number-text input[type=number] {
+  -moz-appearance: textfield;
+}
+
 :root {
   --qt-dark-color1: #16a085;
   --qt-dark-color2: #5c886a;
@@ -238,7 +252,7 @@ button i {
 
 .box-random {
   background: linear-gradient(40deg, linen 0%, var(--random-color), linen 95%);
-  animation: color-transition 2s ease-in-out 0s 1;
+  animation: color-transition 0.5 ease-in-out 0s 1;
 }
 
 .btn-random {

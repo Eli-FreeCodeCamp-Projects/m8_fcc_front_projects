@@ -43,6 +43,20 @@ button i {
   border-radius: 10px;
 }
 
+/* Remove Arrows from input number */
+.input-number-text {
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+.input-number-text input::-webkit-outer-spin-button,
+.input-number-text input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-number-text input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .app-main {
   width: 100%;
   height: 100%;
@@ -138,7 +152,6 @@ button i {
 .projects .project-img-link .project-img {
   display: inline-block;
   max-height: 230px;
-  max-width: 100%;
   margin: auto;
 }
 
