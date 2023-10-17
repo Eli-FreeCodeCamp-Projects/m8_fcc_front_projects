@@ -152,6 +152,7 @@ button i {
 .projects .project-img-link .project-img {
   display: inline-block;
   max-height: 230px;
+  max-width: 100%;
   margin: auto;
 }
 
