@@ -1,0 +1,195 @@
+@import '../variables';
+@import '../root';
+@import '../mixins';
+@import '../components';
+@import "../helpers";
+$display-size: 300px;
+$bg-break: rgb(35, 21, 42);
+$bg-session: rgb(7, 17, 49);
+
+.bg-break{
+  background: linear-gradient(40deg, $bg-break, rgb(82, 52, 101)) ;
+}
+.bg-break-body{
+  @extend .bg-break;
+  @include box-shadow(0px, 45px, 10px, rgb(92, 44, 117));
+}
+.bg-session{
+  background: linear-gradient(40deg, $bg-session, rgb(46, 60, 105)) ;
+}
+.bg-session-body{
+  @extend .bg-session;
+  @include box-shadow(0px, 45px, 10px, rgb(41, 52, 91));
+}
+#clock-container{
+  max-width: 370px;
+  .clock-selector{
+    width: 100%;
+    position: relative;
+    @extend .flex-column-center;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid $text-light;
+    border-radius: 10px;
+    z-index: 2;
+    background-color: $bg-main;
+    .break-selector{
+      padding: 20px;
+      @extend .bg-break;
+    }
+    .session-selector{
+      padding: 20px;
+      @extend .bg-session;
+    }
+  }
+  .clock-body{
+    width: 100%;
+    margin-top: -50px;
+    border: 2px solid $text-light;
+    border-radius: 0 0 50% 50%;
+    height: $display-size;
+    font-size: 1.8em;
+    background-color: $bg-main;
+    .timer-display{
+      padding: 50px;
+      border-radius: 0 0 50% 50%;
+      #timer-label{
+        text-align: center;
+        padding: 20px 10px 10px 10px;
+      }
+      #time-left{
+        text-align: center;
+        padding: 10px 20px;
+        @extend .width-fit-content;
+        margin: 10px auto 0 auto;
+        background-color: black;
+        border-radius: 10px;
+      }
+    }
+
+    .timer-control {
+      @extend .flex-column-center;
+      flex-direction: row;
+      z-index: 99;
+      height: 50px;
+      width: 100%;
+      margin-top: -30px;
+      .btn-group {
+        @extend .width-fit-content;
+        margin: 0 auto;
+        z-index: 99;
+
+        button {
+          background-color: $bg-main;
+          color: $text-light;
+          border: 2px solid $text-light;
+
+          &.active {
+            background-color: $text-light;
+            color: $bg-main;
+            border: 2px solid $bg-main;
+          }
+        }
+
+      }
+    }
+
+  }
+
+}
+/*#clock-container{
+
+  .clock-body{
+    display: flex;
+    .break-selector,
+    .session-selector{
+      padding: 15px;
+      border: 2px solid $text-light;
+      width: $display-size*1.3;
+      height: $display-size*0.8;
+      margin: auto;
+      .timer-selector{
+        width: 70%;
+        .input-group{
+          justify-content: center;
+        }
+        input{
+          width: 75%;
+          margin: 0 auto;
+        }
+      }
+    }
+    .break-selector{
+      margin-right: -$display-size/2;
+      border-right: none;
+      border-radius: 10px 0 0 0;
+      .timer-selector{
+        input{
+
+        }
+      }
+    }
+    .session-selector{
+      margin-left: -$display-size/2;
+      border-left: none;
+      border-radius: 0 10px 0 0;
+      .timer-selector{
+        margin-left: 33%;
+      }
+    }
+    .timer-display{
+      border: 2px solid $text-light;
+      border-radius: 50%;
+      width: $display-size;
+      height: $display-size;
+      font-size: 1.8em;
+      z-index: 1;
+      background-color: $bg-main;
+      #timer-label{
+        text-align: center;
+        padding: $display-size/6 10px 10px 10px;
+      }
+      #time-left{
+        text-align: center;
+        padding: 10px 20px;
+        @extend .width-fit-content;
+        margin: 0 auto;
+        background-color: black;
+        border-radius: 10px;
+      }
+    }
+
+  }
+
+
+  .clock-footer{
+
+    .timer-control{
+      @extend .flex-column-center;
+      flex-direction: row;
+      z-index: 99;
+      height: 50px;
+      width: $display-size*1.3 + $display-size + ($display-size/4) + 10px;
+      margin: -22px auto 20px auto;
+      border: 2px solid $text-light;
+      background-color: $bg-main;
+      .btn-group{
+        @extend .width-fit-content;
+        margin: 0 auto;
+        z-index: 99;
+        button{
+          background-color: $bg-main;
+          color: $text-light;
+          border: 2px solid $text-light;
+          &.active{
+            background-color: $text-light;
+            color: $bg-main;
+            border: 2px solid $bg-main;
+          }
+        }
+
+      }
+    }
+
+  }
+}*/
