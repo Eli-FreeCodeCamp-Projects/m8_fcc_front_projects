@@ -9,9 +9,9 @@ export const CurrentTimerRun = Object.freeze({
 export const TimerStatus = Object.freeze({
     START:   Symbol("start"),
     STOP:  Symbol("stop"),
-    PAUSE:  Symbol("pause"),
-    ENDED:  Symbol("ended")
+    PAUSE:  Symbol("pause")
 });
+
 const setTimerLength = (value) => {
     if(ut.isNumber(value) && (value > 0 && value <= 60)){
         return value
@@ -31,7 +31,7 @@ const updateTimerValue = (state, currentRun) => {
                 state.timerValue = state.breakTime * 60
                 break
         }
-
+        state.timerMax = state.timerValue
     }
 }
 
@@ -50,6 +50,7 @@ const updateTimerRun = (state) => {
             state.timerValue = state.sessionTime * 60
             break;
     }
+    state.timerMax = state.timerValue
 }
 
 const defaultState = {
@@ -57,6 +58,7 @@ const defaultState = {
     sessionTime: 25,
     timerRun: CurrentTimerRun.SESSION.toString(),
     timerValue: 25*60,
+    timerMax: 25*60,
     timerStatus: TimerStatus.STOP.toString(),
     isStarted: false,
     timerId: null
@@ -71,6 +73,7 @@ const clock25_5Slice = createSlice({
             state.sessionTime = defaultState.sessionTime;
             state.timerRun = defaultState.timerRun;
             state.timerValue = defaultState.timerValue;
+            state.timerMax = defaultState.timerMax;
             state.timerStatus = defaultState.timerStatus;
             state.isStarted = defaultState.isStarted;
         },
@@ -151,6 +154,7 @@ export const selectBreakTime = state => state.clock25_5.breakTime
 export const selectSessionTime = state => state.clock25_5.sessionTime
 export const selectTimerRun = state => state.clock25_5.timerRun
 export const selectTimerValue = state => state.clock25_5.timerValue
+export const selectTimerMax = state => state.clock25_5.timerMax
 export const selectTimerStatus = state => state.clock25_5.timerStatus
 export const selectIsStarted = state => state.clock25_5.isStarted
 export const selectTimerId = state => state.clock25_5.timerId
