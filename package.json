@@ -1,7 +1,7 @@
 {
   "name": "m8_fcc_front_projects",
   "private": true,
-  "version": "0.1.8",
+  "version": "0.1.9",
   "homepage": "https://mano8.github.io/m8_fcc_front_projects",
   "type": "module",
   "scripts": {

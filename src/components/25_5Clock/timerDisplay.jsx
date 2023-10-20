@@ -6,9 +6,9 @@ import {
 } from "./features/clock25_5Slice.js";
 import {useEffect} from "react";
 import {ut} from "../../utils/utils.js";
+import PropTypes from "prop-types";
 
-
-export default function TimerDisplay({timerValueChange, timerLabelChange}){
+export default function TimerDisplay({timerValueChange=null, timerLabelChange=null}){
     const dispatch = useDispatch()
     const timerRun = useSelector(selectTimerRun)
     const timerValue = useSelector(selectTimerValue)
@@ -119,4 +119,9 @@ export default function TimerDisplay({timerValueChange, timerLabelChange}){
             <div id="time-left" className="time-left">{formatTimerValue(timerValue)}</div>
         </div>
     )
+}
+
+TimerDisplay.propTypes = {
+    timerValueChange: PropTypes.func, 
+    timerLabelChange: PropTypes.func
 }

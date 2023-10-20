@@ -13,13 +13,7 @@ import Beep from './assets/sounds/BeepSound.wav'
  * @constructor
  */
 export default function App(){
-    const handleTimerValueChange = (action, value) => {
-        console.log(`display has changed: -- action : ${action} -- value : ${value}`)
-    };
-
-    const handleTimerLabelChange = (action, value) => {
-        console.log(`display has changed: -- action : ${action} -- value : ${value}`)
-    };
+    
     return(
         <Provider store={Store}>
             <section id="clock-container" className="container-fluid">
@@ -28,7 +22,7 @@ export default function App(){
                     <SessionSelector />
                 </div>
                 <div className="clock-body">
-                    <TimerDisplay  timerValueChange={handleTimerValueChange} />
+                    <TimerDisplay />
                     <TimerControls />
                 </div>
                 <div className="clock-footer">
