@@ -57,6 +57,22 @@ button i {
   -moz-appearance: textfield;
 }
 
+@keyframes visible-transition {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+}
+@keyframes hide-transition {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+}
 .app-main {
   width: 100%;
   height: 100%;

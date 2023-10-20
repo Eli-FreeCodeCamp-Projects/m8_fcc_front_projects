@@ -38,5 +38,24 @@
   /* Firefox */
   input[type=number] {
     -moz-appearance: textfield;
+    appearance: textfield;
+  }
+}
+
+@keyframes visible-transition {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide-transition {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
   }
 }

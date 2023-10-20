@@ -1,17 +1,18 @@
 import {useSelector, useDispatch} from "react-redux";
 import {
-    CurrentTimerRun,
+    CurrentTimerRun, setTimerValue, TimerStatus, startTimerId,
     selectTimerRun, selectTimerStatus,
-    selectTimerValue, setTimerValue,
-    TimerStatus, startTimerId, selectTimerId
+    selectTimerValue, selectTimerMax, selectTimerId
 } from "./features/clock25_5Slice.js";
 import {useEffect} from "react";
 import {ut} from "../../utils/utils.js";
 
-export default function TimerDisplay(){
+
+export default function TimerDisplay({timerValueChange, timerLabelChange}){
     const dispatch = useDispatch()
     const timerRun = useSelector(selectTimerRun)
     const timerValue = useSelector(selectTimerValue)
+    const timerMax = useSelector(selectTimerMax)
     const timerStatus = useSelector(selectTimerStatus)
     const timerId = useSelector(selectTimerId)
 
@@ -30,6 +31,7 @@ export default function TimerDisplay(){
             audio.play();
         }
     }
+
     const runTimer = () => {
         switch (timerStatus) {
             case TimerStatus.START.toString():
@@ -56,27 +58,46 @@ export default function TimerDisplay(){
         return `${val}`
     }
 
-    const formatTimerValue = (val) => {
-        if(val > 60*60){
-            val = 60*60
-        }else if(val < 0){
-            val = 0
+    const handleTimerValueChange = (data) => {
+        if(ut.isFunction(timerValueChange)){
+            timerValueChange(data)
         }
-        if(timerValue === 0){
+    }
+
+    const handleTimerLabelChange = (data) => {
+        if(ut.isFunction(timerLabelChange)){
+            timerLabelChange(data)
+        }
+    }
+
+    const formatTimerValue = (val) => {
+        if(val === 0){
             playSound()
         }
+        handleTimerValueChange({timerValue: val})
         const min = formatNumberString(Math.floor(val / 60))
         const sec = formatNumberString(val - (min * 60))
         return `${min}:${sec}`
     }
+    /**
+     * Get the current timer css class.
+     * @param {string} value 
+     * @returns {string} return the current timer css class.
+     */
     let getBgClass = (value) => {
         switch (value) {
             case CurrentTimerRun.SESSION.toString():
-                return 'bg-session-body'
+                return 'bg-session-clock'
             case CurrentTimerRun.BREAK.toString():
-                return 'bg-break-body'
+                return 'bg-break-clock'
         }
     }
+
+    /**
+     * Get the current timer label.
+     * @param {string} value 
+     * @returns {string} Return the current timer label
+     */
     const getTimerLabel = (value) => {
         switch (value) {
             case CurrentTimerRun.SESSION.toString():
@@ -85,8 +106,15 @@ export default function TimerDisplay(){
                 return "Break"
         }
     }
+
+    const getTimerValueToDeg = (value, max) => {
+        const percentVal = Math.ceil( (value * 100) / max);
+        const PercentDeg =  Math.ceil(360 - (percentVal * 360) / 100)
+        return PercentDeg;
+    }
+    const clockStyle = {"--clock-current-deg": `${getTimerValueToDeg(timerValue, timerMax)}deg`}
     return(
-        <div className={`timer-display ${getBgClass(timerRun)}`}>
+        <div className={`timer-display ${getBgClass(timerRun)}`} style={clockStyle}>
             <div id="timer-label" className="timer-label">{getTimerLabel(timerRun)}</div>
             <div id="time-left" className="time-left">{formatTimerValue(timerValue)}</div>
         </div>

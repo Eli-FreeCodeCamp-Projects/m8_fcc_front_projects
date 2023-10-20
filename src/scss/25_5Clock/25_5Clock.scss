@@ -4,69 +4,142 @@
 @import '../components';
 @import "../helpers";
 $display-size: 300px;
-$bg-break: rgb(35, 21, 42);
-$bg-session: rgb(7, 17, 49);
+$bg-break: #523d0d;
+$bg-break-smooth: rgba(82, 61, 13, 0.6);
+$bg-break-sec: black;
+$bg-session: #102e41;
+$bg-session-smooth: rgba(16, 46, 65, 0.6);
+$bg-session-sec: black;
+$text-clock: #D4D3DC;
+$bg-clock: #384454;
+/* test */
+:root{
+  --clock-current-deg: 0deg;
+}
+.clock-transition{
+  -webkit-transition: transform 0.3s cubic-bezier(.4,2.08,.55,.44);
+  -ms-transition: transform 0.3s cubic-bezier(.4,2.08,.55,.44);
+  transition: transform 0.3s cubic-bezier(.4,2.08,.55,.44);
+}
+
+.ease-transition{
+  -webkit-transition: transform 0.3s ease-in-out;
+  -ms-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
 
 .bg-break{
-  background: linear-gradient(40deg, $bg-break, rgb(82, 52, 101)) ;
+  background: linear-gradient(90deg, $bg-break, $bg-break-sec);
+  @extend .ease-transition;
 }
-.bg-break-body{
+
+.bg-break-clock{
   @extend .bg-break;
-  @include box-shadow(0px, 45px, 10px, rgb(92, 44, 117));
+  @include clock-gradient(transparent,
+          $bg-break,
+          $bg-break-sec,
+          $bg-session,
+          $bg-session-sec,
+          var(--clock-current-deg),
+          1deg
+  );
 }
+
 .bg-session{
-  background: linear-gradient(40deg, $bg-session, rgb(46, 60, 105)) ;
+  background: linear-gradient(270deg, $bg-session, $bg-session-sec);
+  @extend .ease-transition;
 }
-.bg-session-body{
+
+.bg-session-clock{
   @extend .bg-session;
-  @include box-shadow(0px, 45px, 10px, rgb(41, 52, 91));
+  @include clock-gradient(transparent,
+          $bg-session,
+          $bg-session-sec,
+          $bg-break,
+          $bg-break-sec,
+          var(--clock-current-deg),
+          2deg
+  );
+}
+
+.border-clock-light{
+  border: 2px solid $text-clock;
+}
+.border-clock-dark{
+  border: 2px solid black;
+}
+.clock-index{
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+.clock-size{
+  max-width: 370px;
+  min-width: 330px;
 }
 #clock-container{
-  max-width: 370px;
+  @extend .clock-size;
   .clock-selector{
+    @extend .flex-column-center;
+    @extend .border-clock-light;
+    @extend .clock-size;
     width: 100%;
     position: relative;
-    @extend .flex-column-center;
     flex-direction: row;
     justify-content: space-between;
-    border: 2px solid $text-light;
     border-radius: 10px;
-    z-index: 2;
-    background-color: $bg-main;
+    z-index: 10;
+    background-color: $bg-clock;
+    overflow: hidden;
     .break-selector{
-      padding: 20px;
       @extend .bg-break;
+      padding: 20px;
+      min-width: 165px;
     }
     .session-selector{
-      padding: 20px;
       @extend .bg-session;
+      padding: 20px;
+      min-width: 165px;
     }
   }
   .clock-body{
+    @extend .clock-size;
     width: 100%;
     margin-top: -50px;
-    border: 2px solid $text-light;
-    border-radius: 0 0 50% 50%;
     height: $display-size;
     font-size: 1.8em;
-    background-color: $bg-main;
     .timer-display{
+      @extend .border-clock-light;
+      @extend .clock-index;
       padding: 50px;
       border-radius: 0 0 50% 50%;
-      #timer-label{
-        text-align: center;
-        padding: 20px 10px 10px 10px;
+      background-color: transparent;
+      letter-spacing: 0.08em;
+      #timer-label, #time-left{
+        @extend .clock-index;
+        @extend .border-clock-dark;
+        @extend .width-fit-content;
+        padding: 10px 20px;
+        margin: 10px auto 0 auto;
+        background-color: $bg-main;
+        border-radius: 10px;
+        @include box-shadow(5px, 5px, 10px, black);
       }
       #time-left{
-        text-align: center;
-        padding: 10px 20px;
-        @extend .width-fit-content;
-        margin: 10px auto 0 auto;
         background-color: black;
-        border-radius: 10px;
+        
       }
     }
-
+    .timer-display.bg-break-clock{
+      #timer-label{
+        @extend .bg-break;
+      }
+    }
+    .timer-display.bg-session-clock{
+      #timer-label{
+        @extend .bg-session;
+      }
+    }
     .timer-control {
       @extend .flex-column-center;
       flex-direction: row;
@@ -80,14 +153,13 @@ $bg-session: rgb(7, 17, 49);
         z-index: 99;
 
         button {
-          background-color: $bg-main;
-          color: $text-light;
-          border: 2px solid $text-light;
-
+          @extend .border-clock-light;
+          background-color: $bg-clock;
+          color: $text-clock;
           &.active {
-            background-color: $text-light;
-            color: $bg-main;
-            border: 2px solid $bg-main;
+            @extend .border-clock-light;
+            background-color: $text-clock;
+            color: $bg-clock;
           }
         }
 
@@ -95,101 +167,5 @@ $bg-session: rgb(7, 17, 49);
     }
 
   }
-
 }
-/*#clock-container{
 
-  .clock-body{
-    display: flex;
-    .break-selector,
-    .session-selector{
-      padding: 15px;
-      border: 2px solid $text-light;
-      width: $display-size*1.3;
-      height: $display-size*0.8;
-      margin: auto;
-      .timer-selector{
-        width: 70%;
-        .input-group{
-          justify-content: center;
-        }
-        input{
-          width: 75%;
-          margin: 0 auto;
-        }
-      }
-    }
-    .break-selector{
-      margin-right: -$display-size/2;
-      border-right: none;
-      border-radius: 10px 0 0 0;
-      .timer-selector{
-        input{
-
-        }
-      }
-    }
-    .session-selector{
-      margin-left: -$display-size/2;
-      border-left: none;
-      border-radius: 0 10px 0 0;
-      .timer-selector{
-        margin-left: 33%;
-      }
-    }
-    .timer-display{
-      border: 2px solid $text-light;
-      border-radius: 50%;
-      width: $display-size;
-      height: $display-size;
-      font-size: 1.8em;
-      z-index: 1;
-      background-color: $bg-main;
-      #timer-label{
-        text-align: center;
-        padding: $display-size/6 10px 10px 10px;
-      }
-      #time-left{
-        text-align: center;
-        padding: 10px 20px;
-        @extend .width-fit-content;
-        margin: 0 auto;
-        background-color: black;
-        border-radius: 10px;
-      }
-    }
-
-  }
-
-
-  .clock-footer{
-
-    .timer-control{
-      @extend .flex-column-center;
-      flex-direction: row;
-      z-index: 99;
-      height: 50px;
-      width: $display-size*1.3 + $display-size + ($display-size/4) + 10px;
-      margin: -22px auto 20px auto;
-      border: 2px solid $text-light;
-      background-color: $bg-main;
-      .btn-group{
-        @extend .width-fit-content;
-        margin: 0 auto;
-        z-index: 99;
-        button{
-          background-color: $bg-main;
-          color: $text-light;
-          border: 2px solid $text-light;
-          &.active{
-            background-color: $text-light;
-            color: $bg-main;
-            border: 2px solid $bg-main;
-          }
-        }
-
-      }
-    }
-
-  }
-}*/

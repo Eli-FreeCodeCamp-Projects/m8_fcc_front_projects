@@ -150,6 +150,22 @@ header h1 {
   -moz-appearance: textfield;
 }
 
+@keyframes visible-transition {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+}
+@keyframes hide-transition {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+}
 #preview h1, #preview h2, #preview h3, #preview h4, #preview h5 {
   font-family: "Corben", serif;
 }

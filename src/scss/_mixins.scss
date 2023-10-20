@@ -10,3 +10,37 @@
   justify-content: $j;
   align-items: $a;
 }
+
+/*
+ *
+ *
+ */
+@mixin clock-gradient($bg-clg-start,
+                      $bg-clg-base1,
+                      $bg-clg-sec1,
+                      $bg-clg-base2,
+                      $bg-clg-sec2,
+                      $deg-clg,
+                      $deg-clg-ref){
+
+  $middle-deg: calc(((360deg - (var(--clock-current-deg))) / 2) + var(--clock-current-deg));
+  background-image: conic-gradient(
+                  $bg-clg-start 0deg calc($deg-clg - $deg-clg-ref),
+                  $bg-clg-sec1 calc($deg-clg + $deg-clg-ref),
+                  $bg-clg-base1 $middle-deg ,
+                  $bg-clg-sec1 360deg,
+  ),
+  conic-gradient(
+                  $bg-clg-sec2 0deg,
+                  $bg-clg-base2 calc(var(--clock-current-deg) / 2 ),
+                  $bg-clg-sec2 $deg-clg,
+                  $bg-clg-start $deg-clg
+
+  );
+  /*
+                  $bg-clg-sec2 ,
+                  $bg-clg-base2 $deg-clg,
+                  $bg-clg-sec2,
+                  $bg-clg-base2
+                  */
+}

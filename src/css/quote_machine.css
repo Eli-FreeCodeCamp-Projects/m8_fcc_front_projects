@@ -56,6 +56,22 @@ button i {
   -moz-appearance: textfield;
 }
 
+@keyframes visible-transition {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+}
+@keyframes hide-transition {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+}
 :root {
   --qt-dark-color1: #16a085;
   --qt-dark-color2: #5c886a;

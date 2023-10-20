@@ -32,16 +32,6 @@ export function TimerSelector({
     const btnDownDisabled = (timerValue <= minValue);
     return(
         <div className="timer-selector">
-            <BtRange
-                onlyInput={true}
-                disabled={false}
-                inputId={`${inputId}-range`}
-                inputValue={timerValue}
-                minValue={minValue}
-                maxValue={maxValue}
-                stepValue={stepValue}
-                handleChange={handleRangeChange}
-            />
             <div className="tSel-label"><label id={labelId} htmlFor={inputId}>{label}</label></div>
             <div className="input-group">
                 <button
@@ -64,6 +54,16 @@ export function TimerSelector({
                     <i className="fas fa-arrow-down"></i>
                 </button>
             </div>
+            <BtRange
+                onlyInput={true}
+                disabled={false}
+                inputId={`${inputId}-range`}
+                inputValue={timerValue}
+                minValue={minValue}
+                maxValue={maxValue}
+                stepValue={stepValue}
+                handleChange={handleRangeChange}
+            />
         </div>
     )
 }
