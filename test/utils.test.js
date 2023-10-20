@@ -10,6 +10,16 @@ test('test toFixedFloat method', () => {
     expect(ut.toFixedFloat('hello', 2, 0)).toBe(0)
 })
 
+test('test isFunction method', () => {
+    const funcTest = ()=>{return true;}
+    expect(ut.isFunction(funcTest)).toBe(true)
+    expect(ut.isFunction({})).toBe(false)
+    expect(ut.isFunction({a: 1})).toBe(false)
+    expect(ut.isFunction("hello")).toBe(false)
+    expect(ut.isFunction(['a'])).toBe(false)
+    expect(ut.isFunction(2)).toBe(false)
+})
+
 test('test isObject method', () => {
     expect(ut.isObject({})).toBe(true)
     expect(ut.isObject({a: 1})).toBe(true)

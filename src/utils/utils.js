@@ -14,6 +14,14 @@ export const ut = {
         return (ut.isNumber(fNum) && ut.isNumber(fix)) ? parseFloat(fNum.toFixed(fix)) : defaultValue;
     },
     /**
+     * Test if value is a valid function
+     * @param value {object} The value to test
+     * @return {boolean} Return true if value is a valid function
+     */
+    isFunction: (value) => {
+        return typeof value === "function" 
+    },
+    /**
      * Test if value is a valid object
      * @param value {object} The value to test
      * @return {boolean} Return true if value is a valid object
